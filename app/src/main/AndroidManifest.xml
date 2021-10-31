@@ -3,7 +3,6 @@
     package="com.gtappdevelopers.newsapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
 
     <application
@@ -14,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewsApp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".WallpaperActivity"></activity>
+        <activity android:name=".BookDetailActivity"></activity>
+        <activity android:name=".LibraryActivity" />
+        <activity android:name=".WallpaperActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -30,6 +30,7 @@ class HomeActivity : AppCompatActivity() {
         getNewsDetails()
     }
 
+
     private fun getNewsDetails() {
         val apiURL =
             "https://api.pexels.com/v1/curated?per_page=30&page=1"
