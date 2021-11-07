@@ -11,7 +11,6 @@ import com.squareup.picasso.Picasso
 
 class BookDetailActivity : AppCompatActivity() {
 
-    lateinit var bookAuthor: String
     lateinit var bookDesc: String
     lateinit var bookImg: String
     lateinit var bookTitle: String
@@ -21,7 +20,6 @@ class BookDetailActivity : AppCompatActivity() {
     lateinit var publishDate: String
     lateinit var publisher: String
 
-    lateinit var bookAuthorTV: TextView
     lateinit var bookDescTV: TextView
     lateinit var bookImgIV: ImageView
     lateinit var bookTitleTV: TextView
@@ -34,7 +32,6 @@ class BookDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book_detail)
-        bookAuthor = intent.getStringExtra("bookAuthor").toString();
         bookDesc = intent.getStringExtra("bookDesc").toString();
         bookImg = intent.getStringExtra("bookImg").toString();
         bookTitle = intent.getStringExtra("bookTitle").toString();
@@ -46,16 +43,13 @@ class BookDetailActivity : AppCompatActivity() {
 
         bookTitleTV = findViewById(R.id.idTVBookTitle);
         publisherTV = findViewById(R.id.idTVPublisher);
-        bookAuthorTV = findViewById(R.id.idTVAuthor);
         pageCountTV = findViewById(R.id.idTVPageCount);
         bookImgIV = findViewById(R.id.idIVbook);
         publishDateTV = findViewById(R.id.idTVPublishedDate);
         bookDescTV = findViewById(R.id.idTVDescription);
         viewBookBtn = findViewById(R.id.idBtnViewBook);
-
         bookTitleTV.text = bookTitle;
-        bookAuthorTV.text = "Author : "+bookAuthor;
-        publisherTV.text = "Publisher : "+bookAuthor;
+        publisherTV.text = "Publisher : "+publisher;
         pageCountTV.text = "Pages : "+pageCount;
         Picasso.get().load(bookImg).into(bookImgIV);
         publishDateTV.text = "Published On : "+publishDate;

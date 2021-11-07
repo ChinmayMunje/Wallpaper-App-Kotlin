@@ -21,7 +21,6 @@ class LibraryRVAdapter(
         val bookTitleTV: TextView = itemView.findViewById(R.id.idTVBookTitle)
         val publisherTV: TextView = itemView.findViewById(R.id.idTVpublisher)
         val publishedOnTV: TextView = itemView.findViewById(R.id.idTVPublishedDate)
-        val authorTV: TextView = itemView.findViewById(R.id.idTVAuthor)
         val pageCountTV: TextView = itemView.findViewById(R.id.idTVPageCount)
     }
 
@@ -39,13 +38,11 @@ class LibraryRVAdapter(
         holder.pageCountTV.text = "Number of Pages : " + libraryRVItem.pageCount.toString()
         holder.publisherTV.text = "Publisher : " + libraryRVItem.publisher
         holder.publishedOnTV.text = "Published On : "+libraryRVItem.publishDate
-        holder.authorTV.text = "Author : "+libraryRVItem.bookAuthor;
 
         Picasso.get().load(libraryRVItem.bookImg).placeholder(R.drawable.ic_launcher_background)
             .into(holder.bookIV)
         holder.itemView.setOnClickListener {
             val intent = Intent(context, BookDetailActivity::class.java);
-            intent.putExtra("bookAuthor", libraryList.get(position).bookAuthor);
             intent.putExtra("bookDesc", libraryList.get(position).bookDesc);
             intent.putExtra("bookImg", libraryList.get(position).bookImg);
             intent.putExtra("bookTitle", libraryList.get(position).bookTitle);
