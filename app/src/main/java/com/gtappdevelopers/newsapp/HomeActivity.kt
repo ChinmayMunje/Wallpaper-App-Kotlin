@@ -39,7 +39,7 @@ class HomeActivity : AppCompatActivity(), CategoryClickInterface {
         searchEdt = findViewById(R.id.idEdtSearch);
         searchIV = findViewById(R.id.idIVSearch);
         searchIV.setOnClickListener {
-            if(searchEdt.text.toString().isNotEmpty()){
+            if (searchEdt.text.toString().isNotEmpty()) {
                 getWallpapersByCategory(searchEdt.text.toString())
             }
         }
@@ -90,7 +90,7 @@ class HomeActivity : AppCompatActivity(), CategoryClickInterface {
         )
 
         categoryRVAdapter = CategoryRVAdapter(categoryList, this, this)
-        categoryRV.layoutManager = LinearLayoutManager(this,RecyclerView.HORIZONTAL,false)
+        categoryRV.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
         categoryRV.adapter = categoryRVAdapter
         categoryRVAdapter.notifyDataSetChanged();
 
@@ -131,7 +131,7 @@ class HomeActivity : AppCompatActivity(), CategoryClickInterface {
             override fun getHeaders(): MutableMap<String, String> {
                 val headers = HashMap<String, String>()
                 headers["Authorization"] =
-                    "563492ad6f917000010000010e57141f30b2437cb7746c1519d63ee5"
+                    "Enter your key"
                 return headers
             }
         }
@@ -173,7 +173,7 @@ class HomeActivity : AppCompatActivity(), CategoryClickInterface {
             override fun getHeaders(): MutableMap<String, String> {
                 val headers = HashMap<String, String>()
                 headers["Authorization"] =
-                    "563492ad6f917000010000010e57141f30b2437cb7746c1519d63ee5"
+                    "Enter your key"
                 return headers
             }
         }
